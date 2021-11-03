@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H07Img.html</title>
+</head>
+<body>
+    
+    <h2>img 태그</h2>
+    <img src="./images/1.png" alt="스펀지밥">
+
+    <h2>이미지 크기설정</h2>
+    <!-- 가로사이즈만 지정하면 세로는 비율에 맞게 알아서 맞춰진다. -->
+    <img src="./images/1.png" width="300" alt="스폰지밥">
+    <!-- 두가지 사이즈를 동시에 지정하면 비율에 맞지 않아 이미지가 찌그러지는 경우가 발생할 수 있다. -->
+    <img src="./images/2.png" width="100" height="200" alt="징징이">
+    <!-- 대부분의 경우 웹디자인에서는 사이즈를 지정하지 않는다.
+        이 방법이 훨씬 더 안전하기 때문이다. -->
+    <img src="./images/2.png" alt="징징이">
+    
+    <h2>이미지에 링크걸기</h2>
+    <a href="http://koreavc.or.kr/" target="_blank">
+        <img src="./images/logo.png" alt="로고"> <!-- 내부이미지라 상대경로 사용 -->
+    </a>
+
+    <h2>외부에 있는 이미지 가져오기</h2>
+    <!-- 외부이미지를 사용할 경우 http를 포함한 절대경로를 사용한다. -->
+    <a href="http://www.ikosmo.co.kr/" target="_blank">
+        <img src="http://www.ikosmo.co.kr/images/common/logo_center_v2.jpg" alt="한국직업전문학교">
+    </a>
+
+    <!-- 
+        shape속성에 값을 저장할때
+            rectangle -> rect
+            circle -> circ
+            polygon -> poly 와 같이 줄여서 사용할 수 있다.
+        -map의 name속성값과 img의 usemap의 속성값만 일치하면 위치는 어디든
+        상관없이 선언할 수 있다.
+        -사각형과 원을 제외한 나머지 모든 도형은 다각형(polygon)으로 표현한다.
+     -->
+    <h2>이미지맵 사용하기</h2>
+    <img src="./images/Map01.png" alt="이미지맵사용하기" usemap="#MyImage"> <!-- 여기서 쓴 MyImage가 밑에 이미지맵에 거는 이름. 이름만 동일하면 위치가 어디에 있든 상관없음-->
+    <map name="MyImage">
+        <area shape="rectangle" coords="70, 130, 170, 230" href="http://naver.com" alt="네이버"> <!-- coords는 x,y 좌표 값을 입력한다. (좌측xy, 우측xy)-->
+        <area shape="circle" coords="246, 182, 58" href="http://daum.net" alt="다음">
+        <area shape="polygon" coords="375,128,305,232,437,229" href="http://nate.com" target="_blank" /><!--정식명칭은 polygon이고 poly라고 써도 상관없음-->
+        <area shape="polygon" coords="499,130,485,168,445,181,485,196,497,230,512,198,545,182,516,169,498,131" href="http://google.com" target="_blank" />
+    </map>
+    <!-- Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index) --> <!-- 이미지맵 따오는 사이트 -->
+
+</body>
+</html>
